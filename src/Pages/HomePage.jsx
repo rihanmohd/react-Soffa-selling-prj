@@ -14,7 +14,7 @@ const HomePage = () => {
   <Header />
   <OurProducts />
   <BeautifulRooms />
-  <SharingSection />
+  {/* <SharingSection /> */}
   <Footer />
   </>
   )
