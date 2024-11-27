@@ -17,13 +17,13 @@ const BeautifulRooms = () => {
         <p className='text-lg mt-2'>Our designer already made a lot of 
             beautiful <br></br> prototipe of rooms that 
             inspire you</p>
-            <button className='w-[176px] h-[50px] bg-[#B88E2F] text-white text-lg mt-3'>Explore More</button>
+            <button className='w-[176px] h-[50px] bg-[#B88E2F] text-white text-lg mt-3  hover:scale-105 hover:transition-transform'>Explore More</button>
     </div>
 
 
 {/* right side */}
-<div className='h-[582px] w-[1196px] flex gap-6'>
-    <div className='w-[404px] h-[582px] relative' style={{
+<div className='h-[582px] w-[1196px] flex gap-6 overflow-hidden'>
+    <div className='w-[404px] h-[582px] relative  hover:scale-105 hover:transition-transform overflow-hidden' style={{
             backgroundImage: `url(${img2})`
           }}>
 
@@ -38,11 +38,11 @@ const BeautifulRooms = () => {
     
     <div className='flex flex-col gap-10'>
         
-    <img src={img} className='w-[377px] h-[486px] '></img>
+    <img  src={img} className='w-[377px] h-[486px] hover:scale-105 hover:transition-transform'></img>
     <img src={img4} className='w-[125px] h-[27px]'></img>
     </div>
     
-    <img src={img3} className=' w-[116px] ml-4'></img>
+    <img src={img3} className=' w-[116px] ml-4  hover:scale-105 hover:transition-transform'></img>
 </div>
  </div>
  </>

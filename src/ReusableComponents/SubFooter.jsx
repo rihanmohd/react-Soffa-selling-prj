@@ -27,7 +27,7 @@ const SubFooter = () => {
 
 
   return (
-    <div className='h-[270px] bg-[#FAF3EA]  text-center items-center py-4 flex gap-32 pl-24  -mt-[5500px] '>
+    <div className='h-[270px] bg-[#FAF3EA]  text-center items-center py-4 flex gap-32 pl-24  '>
       
 
       <div className='flex'>

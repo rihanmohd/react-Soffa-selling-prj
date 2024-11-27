@@ -1,9 +1,15 @@
 import React from 'react'
 import { Route,Routes } from 'react-router-dom'
+import Login from './ReusableComponents/Login'
 import HomePage from './Pages/HomePage'
-import LoginPage from './Pages/LoginPage'
-import RegisterPage from './Pages/RegisterPage'
 import ShopPage from './Pages/ShopPage'
+import AboutPage from './Pages/AboutPage'
+import CartSidebar from './components/CartSidebar'
+import ComparisonPage from './Pages/ComparisonPage'
+import ConatctPage from './Pages/ConatctPage'
+
+
+
 const App = () => {
   
   const isToken = localStorage.getItem("Token");
@@ -12,11 +18,15 @@ const App = () => {
 
    
       <Routes>
-        <Route path="/" element={isToken? <HomePage /> : <LoginPage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/" element={isToken? <HomePage /> : <Login />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/shop" element={<ShopPage />} />
-      </Routes>
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/cart" element={<CartSidebar />} />
+        <Route path="/compar" element={<ComparisonPage />} />
+        <Route path="/contact" element={<ConatctPage />} />
+        </Routes>
+     
     
   )
 }

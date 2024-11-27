@@ -1,17 +1,13 @@
 import React from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import img from '../assets/images/rester.png'
+import img1 from '../assets/images/loginimg.png'
 
-const ReusableLogin = ({
-           backgroundImage,
-            underBtn,
-            showEmailInput = false,
-            buttonActive
- 
-}) => {
 
-// to register // https://identitytoolkit.googleapis.com/v1/accounts:signUp?key
-//to login //https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=
+const Login = () => {
 
+     const [isLogin, setLogin] = useState(true)
   const handleSubmit  = async (e) =>{
        e.preventDefault();
        const email = e.target.email.value;
@@ -21,12 +17,19 @@ const ReusableLogin = ({
         password: password,
         returnSecureToken: true 
        }
+      
+       let url;
+       if(isLogin){
+ url = "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAUAt_I1Ceusobj3ZD7DZlh4q0Uraw71MI"
+       } else{
+url = "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAUAt_I1Ceusobj3ZD7DZlh4q0Uraw71MI"
+       }
 
-    const response = await fetch(" https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAUAt_I1Ceusobj3ZD7DZlh4q0Uraw71MI",
+    const response = await fetch(url,
         {
-          method:"POST",
-          body: JSON.stringify(Data),
-          headers:{
+           method:"POST",
+           body: JSON.stringify(Data),
+           headers:{
             "Content-Type":"application/json"
           }
         }
@@ -42,8 +45,7 @@ const ReusableLogin = ({
       <div
         className="bg-cover bg-center w-[730px] h-[800px] mt-4 rounded-md"
         style={{
-          backgroundImage: `url(${backgroundImage})`,
-         
+          backgroundImage: `url(${isLogin ? img : img1})`,
         }}
       >
         <p className="text-xl font-bold text-white pl-7 mt-[700px]">
@@ -65,23 +67,19 @@ const ReusableLogin = ({
           {/* Login/Register Buttons */}
           <div className="flex items-center gap-12 px-2 mt-5  w-[329px] h-[59px] bg-[#49BBBD99] rounded-full">
             <button
-              className={`w-[146px] h-[40px] rounded-full hover:bg-[#49BBBD] ${
-                buttonActive === "login"
-                  ? "bg-[#49BBBD] text-white"
-                  : "text-white bg-transparent"
-              }`}
+              className={`w-[146px] h-[40px] rounded-full hover:bg-[#49BBBD] text-white ${
+                isLogin ? "bg-[#49BBBD] text-white"
+                : ""}`} onClick={()=> setLogin(true)}
             >
-              <Link to="/login">Login</Link>
+              Login
               
             </button>
             <button
-              className={`w-[146px] h-[40px] rounded-full hover:bg-[#49BBBD] ${
-                buttonActive === "register"
-                  ? "bg-[#49BBBD] text-white"
-                  : "text-white bg-transparent"
-              }`}
+              className={`w-[146px] h-[40px] rounded-full hover:bg-[#49BBBD] text-white ${
+               isLogin ? ""
+                  : "bg-[#49BBBD] text-white"}`} onClick={()=> setLogin(false)}
             >
-              <Link to="/register">Register</Link>
+             Register
              
             </button>
           </div>
@@ -91,25 +89,11 @@ const ReusableLogin = ({
 
           {/* Form */}
           <form onSubmit={handleSubmit}  className="mt-6 space-y-6">
-            {/* Username */}
-            <div>
-              <label htmlFor="username" className="block font-semibold text-sm mb-3">
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Enter your User Email"
-                className="w-full px-4 py-2 border border-teal-200 rounded-full focus:outline-none focus:ring-2 focus:ring-teal-500"
-              />
-            </div>
 
-            {/* Email (Shown only for Register) */}
-            {showEmailInput && (
-              <div>
-                <label htmlFor="email" className="block font-semibold text-sm mb-3">
-                  Email
+            {/* Email */}
+            <div>
+            <label htmlFor="email" className="block font-semibold text-sm mb-3">
+                Email
                 </label>
                 <input
                   type="email"
@@ -117,10 +101,10 @@ const ReusableLogin = ({
                   name="email"
                   placeholder="Enter your Email"
                   className="w-full px-4 py-2 border border-teal-200 rounded-full focus:outline-none focus:ring-2 focus:ring-teal-500"
-                />
-              </div>
-            )}
+              />
+            </div>
 
+           
             {/* Password */}
             <div>
               <label htmlFor="password" className="block text-sm font-semibold mb-3">
@@ -181,7 +165,7 @@ const ReusableLogin = ({
               type="submit"
               className="w-[220px] h-[47px] mt-7 ml-36 text-white bg-[#50BBBD] rounded-full hover:bg-teal-600 focus:outline-none"
             >
-             {underBtn}
+             {isLogin ? "Login" : "Register"}
             </button>
           </form>
         </div>
@@ -190,8 +174,4 @@ const ReusableLogin = ({
   );
 };
 
-export default ReusableLogin;
-
-
-
-  
+export default Login;
