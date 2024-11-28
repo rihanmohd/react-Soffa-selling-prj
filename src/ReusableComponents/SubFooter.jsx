@@ -27,46 +27,95 @@ const SubFooter = () => {
 
 
   return (
-    <div className='h-[270px] bg-[#FAF3EA]  text-center items-center py-4 flex gap-32 pl-24  '>
+<div className="h-fit bg-[#FAF3EA] text-center py-4 grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-8  sm:py-10 pl-10 md:gap-4">
+  {/* First Logo Section */}
+  <div className="flex justify-center items-center">
+    <Logo 
+      imgUrl={logo1}
+      title="High Quality"
+      descr="Crafted from top materials"
+    />
+  </div>
+
+  {/* Second Logo Section */}
+  <div className="flex justify-center items-center">
+    <Logo 
+      imgUrl={logo2}
+      title="Warranty Protection"
+      descr="Over 2 years"
+    />
+  </div>
+
+  {/* Third Logo Section */}
+  <div className="flex justify-center items-center">
+    <Logo 
+      imgUrl={logo3}
+      title="Free Shipping"
+      descr="Order over $150"
+    />
+  </div>
+
+  {/* Fourth Logo Section */}
+  <div className="flex justify-center items-center">
+    <Logo 
+      imgUrl={logo4}
+      title="24 / 7 Support"
+      descr="Dedicated support"
+    />
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+//     <div className='h-[270px] bg-[#FAF3EA]  text-center items-center py-4 grid lg:grid-cols-4 md:grid-cols-2 md:h-[330px] md:gap-1 sm:grid-cols-1 sm:h-fit sm:py-10  gap-32  pl-24  '>
       
 
-      <div className='flex'>
-      <Logo 
-     imgUrl={logo1}
-     title="High Quality"
-     descr="crafted from top materials"
+//       <div className='flex '>
+//       <Logo 
+//      imgUrl={logo1}
+//      title="High Quality"
+//      descr="crafted from top materials"
 
-    />
-      </div>
+//     />
+//       </div>
    
-      <div className='flex'>
-<Logo 
-     imgUrl={logo2}
-     title="Warranty Protection"
-     descr="Over 2 years"
+//       <div className='flex'>
+// <Logo 
+//      imgUrl={logo2}
+//      title="Warranty Protection"
+//      descr="Over 2 years"
 
-    />
-</div>
+//     />
+// </div>
 
 
-<div className='flex'>
-<Logo 
-     imgUrl={logo3}
-     title="Free Shipping"
-     descr="Order over 150 $"
+// <div className='flex'>
+// <Logo 
+//      imgUrl={logo3}
+//      title="Free Shipping"
+//      descr="Order over 150 $"
 
-    />
-</div>
+//     />
+// </div>
 
-<div className='flex'>
-<Logo 
-     imgUrl={logo4}
-     title="24 / 7 Support"
-     descr="Dedicated support"
+// <div className='flex'>
+// <Logo 
+//      imgUrl={logo4}
+//      title="24 / 7 Support"
+//      descr="Dedicated support"
 
-    />
-</div>
-    </div>
+//     />
+// </div>
+//     </div>
   )
 }
 

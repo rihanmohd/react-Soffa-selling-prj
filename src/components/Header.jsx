@@ -10,7 +10,7 @@ const Header = () => {
 
   const Card = ({imgUrl,text})=>{
     return (
-      <div className='bg-white items-center h-[480px] w-[381px] overflow-hidden'>
+      <div className='bg-white items-center h-[480px] w-[381px] overflow-hidden relative'>
         <img className='hover:scale-105 hover:transition-transform ' src={imgUrl}></img>
         <p className='text-xl font-bold mt-6'>{text}</p>
       </div>
@@ -19,9 +19,9 @@ const Header = () => {
 
 
   return (
-    <>
+    <div className=''>
 <header
-  className="h-[813px] relative bg-cover bg-center"
+  className="h-[813px]  bg-cover bg-center"
   style={{
     backgroundImage: `url(${bgimg})`,
   }}
@@ -43,13 +43,13 @@ const Header = () => {
 </header>
 
 {/* after header three cards */}
-<div className="w-[90%] max-w-[1183px] h-auto flex flex-col text-center mx-auto mt-10">
+<div className="w-[90%] max-w-[1183px] h-auto grid grid-rows-1  text-center mx-auto mt-10">
   <h2 className="text-lg sm:text-xl md:text-2xl font-bold">Browse The Range</h2>
   <p className="text-sm sm:text-base md:text-lg mt-2">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
   </p>
 
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+  <div className="grid grid-cols-  sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
     <Card imgUrl={dining} text="Dining" />
     <Card imgUrl={Living} text="Living" />
     <Card imgUrl={Bedroom} text="Bedroom" />
@@ -105,7 +105,7 @@ const Header = () => {
 
 </div> */}
 
-  </>
+  </div>
   )
 }
 

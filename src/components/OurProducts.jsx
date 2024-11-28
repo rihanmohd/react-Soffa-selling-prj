@@ -13,10 +13,10 @@ const OurProducts = () => {
   
 
   return (
-   <div className='w-fit  mx-auto grid grid-rows-2 gap-8  mt-5'>
+   <div className='w-fit   mx-auto grid grid-rows-2  gap-8  mt-20'>
     
     <h2 className='text-center text-5xl font-bold'>Our Products</h2>
-    <div className='grid grid-cols-4 gap-6 -mt-48'>
+    <div className='grid lg:grid-cols-4 md:grid-cols-2 md:-mt-96 sm:grid-cols-1 sm:mx-auto sm:-mt-[880px]  xs:mx-auto   gap-6 lg:-mt-48 '>
 
 
     <Card 
@@ -59,7 +59,7 @@ const OurProducts = () => {
 
 
 
-    <div className='grid grid-cols-4 gap-6 '>
+    <div className='grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 sm:mx-auto xs:mx-auto   gap-6 '>
 
 
 <Card 
@@ -99,7 +99,7 @@ const OurProducts = () => {
 />
   
 </div>
-<button className='mx-auto mt-9 w-[245px] h-[48px] border border-[#B88E2F] text-[#B88E2F] text-lg hover:bg-[#B88E2F] hover:text-white'> Show More</button>
+<button className='mx-auto mt-9 w-[245px] h-[48px] sm:w-[200px] border border-[#B88E2F] text-[#B88E2F] text-lg hover:bg-[#B88E2F] hover:text-white'> Show More</button>
    </div>
   )
 }
